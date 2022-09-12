@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "Math"
+name = "Matrix_Calculator"
 version = "0.1.0"
 description = ""
 authors = ["AlkTagar <r0gozinmax@yandex.ru>"]
