@@ -19,7 +19,7 @@ pip install rich
 pip install numpy
 ```
   
-### [poetry](https://python-poetry.org/) install
+### [poetry](https://python-poetry.org/) instaling:
 ```bash
 poetry install
 ```
