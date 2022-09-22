@@ -54,3 +54,4 @@ def print_matrix(matrix: np.ndarray) -> None:
         table.add_row(*i)
 
     console.print(table)
+
