@@ -16,11 +16,14 @@ def main():
     comand = console.input("[bold green]=> ")
 
     match comand:
-        case "q":
-            exit()
+        case "3":
+            pass
 
         case "h":
             pass
+
+        case "q":
+            exit()
 
         case _:
             console.print("[bold red] Команда не обнаружена")
