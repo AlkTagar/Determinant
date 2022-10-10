@@ -31,13 +31,6 @@ def main():
 
         case _:
             console.print("[bold red] Команда не обнаружена")
-    # matrix = User.get_matrix()
-    # User.print_matrix(matrix)
-    # determinant = np.linalg.det(matrix)
-    # console.print(
-    #     f"Определитель матрицы равен: [bold yellow]{determinant}\n",
-    #     style="green"
-    # )
 
 
 while True:

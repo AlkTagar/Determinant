@@ -8,6 +8,7 @@ authors = ["AlkTagar <r0gozinmax@yandex.ru>"]
 python = "^3.10"
 rich = "^12.5.1"
 numpy = "^1.23.3"
+pyTelegramBotAPI = "^4.7.0"
 
 [tool.poetry.dev-dependencies]
 pynvim = "^0.4.3"
