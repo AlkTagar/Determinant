@@ -8,10 +8,12 @@ console = Console()
 
 
 def get_matrix() -> np.ndarray:
+    name = console.input("")
     order = int(Prompt.ask(
         "[bold magenta]Введите порядок матрицы",
         default="2"
     ))
+
     matrix = [[] for _ in range(order)]
 
     for i in matrix:
@@ -28,27 +30,5 @@ def get_matrix() -> np.ndarray:
                 f"[bold red]Количество элементов не соответствует "+
                 "размерности матрицы"
             )
-    return np.array(matrix)
-
-
-def print_matrix(matrix: np.ndarray) -> None:
-    table = Table(
-        show_lines=True,
-        show_header=False,
-        show_footer=False,
-        show_edge=False
-    )
-
-    str_matrix = [[str(n) for n in i] for i in matrix]
-
-    for i in range(len(str_matrix)):
-        table.add_column(
-            justify="center",
-            vertical="middle"
-        )
-
-    for i in str_matrix:
-        table.add_row(*i)
-
-    console.print(table)
+    return name, np.array(matrix)
 

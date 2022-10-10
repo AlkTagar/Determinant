@@ -3,6 +3,7 @@ from rich.console import Console
 
 import User
 import texts
+import Add_matrixes
 
 
 console = Console()
@@ -16,6 +17,9 @@ def main():
     comand = console.input("[bold green]=> ")
 
     match comand:
+        case "0":
+            Add_matrixes()
+
         case "3":
             pass
 
