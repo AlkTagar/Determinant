@@ -2,6 +2,7 @@ import telebot
 from rich.console import Console
 
 import Config
+import Systems
 
 
 bot = telebot.TeleBot(Config.TOKEN)
@@ -17,6 +18,10 @@ def main_handler(message):
 
         case "/start":
             bot.send_message(message.from_user.id, "Start bot")
+            console.log("[cyan]get \"start\"")
+
+        case "/new_system":
+            pass
 
 
 bot.infinity_polling()
