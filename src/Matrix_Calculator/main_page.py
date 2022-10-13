@@ -25,6 +25,7 @@ def main_handler(message):
         case "/new_system":
             bot.send_message(message.from_user.id, texts.system)
             console.log("new system", style="italic blue")
+            bot.register_next_step_handler(message, Systems.new_system)
 
         case _:
             bot.send_message(message.from_user.id, "?")

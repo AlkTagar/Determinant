@@ -1,5 +1,5 @@
 import telebot
-import numpy
+import numpy as np
 from rich.console import Console
 
 import Config
@@ -10,4 +10,17 @@ console = Console()
 
 
 def new_system(message):
-    pass
+    matrix = np.array(
+        [[float(n) for n in i.split()] for i in message.text.split("\n")]
+    ) # разбивает текст на строки и укладывает в матрицу
+
+    matr_B = [[i] for i in matrix[:, -1]] # срез столбца "B"
+
+    matr_inv_A = np.linalg.inv(
+        np.delete(matrix, -1, 1)
+    )
+
+    matr_X = np.dot(matr_inv_A, matr_B)
+
+    bot.send_message(message.from_user.id, matr_X)
+
