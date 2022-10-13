@@ -21,6 +21,8 @@ def new_system(message):
     )
 
     matr_X = np.dot(matr_inv_A, matr_B)
+    console.log(matr_X)
 
-    bot.send_message(message.from_user.id, matr_X)
+    for i in matr_X:
+        bot.send_message(message.from_user.id, i)
 
