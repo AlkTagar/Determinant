@@ -3,6 +3,7 @@ from rich.console import Console
 
 import Config
 import Systems
+import User
 import texts
 
 
@@ -24,7 +25,10 @@ def main_handler(message):
         case "/new_system":
             bot.send_message(message.from_user.id, texts.system)
             console.log("new system", style="italic blue")
-            bot.register_next_step_handler(message, Systems.new_system)
+            bot.register_next_step_handler(message, User.new_system)
+
+        case "/generate_matrix":
+            pass
 
         case _:
             bot.send_message(message.from_user.id, "?")

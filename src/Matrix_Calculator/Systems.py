@@ -1,15 +1,11 @@
-import telebot
 import numpy as np
 from rich.console import Console
 
-import Config
 
-
-bot = telebot.TeleBot(Config.TOKEN)
 console = Console()
 
 
-def new_system(message):
+def search_roots(message):
     matrix = np.array(
         [[float(n) for n in i.split()] for i in message.text.split("\n")]
     ) # разбивает текст на строки и укладывает в матрицу
@@ -23,6 +19,8 @@ def new_system(message):
     matr_X = np.dot(matr_inv_A, matr_B)
     console.log(matr_X)
 
-    for i in matr_X:
-        bot.send_message(message.from_user.id, i)
+    return matr_X
 
+
+def generate_system(message):
+    pass
