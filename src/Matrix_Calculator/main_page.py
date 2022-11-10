@@ -1,4 +1,3 @@
-from rich import style
 import telebot
 from rich.console import Console
 
