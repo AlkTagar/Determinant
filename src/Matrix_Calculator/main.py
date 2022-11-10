@@ -27,8 +27,9 @@ def main_handler(message):
             console.log("new system", style="italic blue")
             bot.register_next_step_handler(message, User.new_system)
 
-        case "/generate_matrix":
-            pass
+        case "/generate_system":
+            console.log("ffffff", style="italic blue")
+            bot.register_next_step_handler(message, User.generate_system)
 
         case _:
             bot.send_message(message.from_user.id, "?")

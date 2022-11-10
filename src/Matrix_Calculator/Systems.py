@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 from rich.console import Console
 
@@ -5,11 +7,7 @@ from rich.console import Console
 console = Console()
 
 
-def search_roots(message):
-    matrix = np.array(
-        [[float(n) for n in i.split()] for i in message.text.split("\n")]
-    ) # разбивает текст на строки и укладывает в матрицу
-
+def search_roots(matrix):
     matr_B = [[i] for i in matrix[:, -1]] # срез столбца "B"
 
     matr_inv_A = np.linalg.inv(
@@ -22,5 +20,13 @@ def search_roots(message):
     return matr_X
 
 
-def generate_system(message):
-    pass
+def generate_system(n: int):
+    while True:
+        matrix = np.array(
+            [[random.randint(-10, 10) for _ in range(n + 1)] for _ in range(n)]
+        )
+
+        roots = search_roots(matrix)
+
+        if all(i[0] == int(i[0]) for i in roots):
+            return matrix, roots
